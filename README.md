@@ -1,20 +1,24 @@
-# KOSSCON 2018 Tutorial
-# Apache Nemo 위에서 주어진 Beam Application을 특정 환경에 대한 설정으로 실행하기
+# KOSSCON 2018 Tutorial: Apache Nemo 위에서 주어진 Beam Application을 특정 환경에 대한 설정으로 실행하기
 
 ## 실습 환경 갖추기
 
 #### Mac OS
 
-1. Homebrew가 설치되어있지 않았다면 `$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"` 커맨드를 통해 설치 (이미 설치되었으면 생략 가능)
+1. Homebrew 설치 (`$ brew -version` 을 실행했을 때, `Homebrew ...` 으로 시작되는 문구가 출력되지 않는 경우):
+```
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
 
-2. 다음 커맨드 차례대로 실행:
+2. Java8 설치 (`$ java -version` 을 실행했을 때, `java version 1.8...` 으로 시작되는 문구가 출력되지 않는 경우):
+```
+$ brew tap caskroom/versions
+$ brew cask install java8
+```
 
-Java8 설치 (`$ java -version` 을 실행했을 때, `java version 1.8...` 으로 시작되는 문구가 출력되지 않는 경우에 진행):
-`$ brew tap caskroom/versions`
-`$ brew cask install java8`
-
-Maven 설치 (`$ mvn -version` 을 실행했을 때, `Apache Maven..` 이라고 시작되는 문구가 출력되지 않는 경우에 진행):
-`$ brew install maven`
+3. Maven 설치 (`$ mvn -version` 을 실행했을 때, `Apache Maven..` 이라고 시작되는 문구가 출력되지 않는 경우):
+```
+$ brew install maven
+```
 
 #### Ubuntu
 
