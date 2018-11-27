@@ -20,6 +20,12 @@ $ brew cask install java8
 $ brew install maven
 ```
 
+4. Protobuf 설치
+```
+$ brew tap homebrew/versions
+$ brew install protobuf@2.5
+```
+
 #### Ubuntu
 
 Ubuntu 16.04 이상의 버전을 권장함.
@@ -28,6 +34,9 @@ Ubuntu 16.04 이상의 버전을 권장함.
 $ sudo apt update
 $ sudo apt install openjdk-8-jdk maven
 $ sudo update-java-alternatives /usr/lib/jvm/java-8-openjdk-amd64
+
+$ sudo add-apt-repository ppa:snuspl/protobuf-250
+$ sudo apt install protobuf-compiler=2.5.0-9xenial1
 ```
 
 ## 실습 다운로드 링크
