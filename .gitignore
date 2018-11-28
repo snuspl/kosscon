@@ -1,0 +1,6 @@
+*.log
+.*.swp
+REEF_LOCAL_RUNTIME/
+target/
+/result/
+/repository/org/apache/nemo/nemo-examples-beam/0.1-SNAPSHOT/nemo-examples-beam-0.1-SNAPSHOT.jar

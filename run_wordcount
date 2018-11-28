@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+exec ./run \
+    -job_id mr_default \
+    -executor_json "$(pwd)/resources/beam_test_executor_resources.json" \
+    -optimization_policy org.apache.nemo.compiler.optimizer.policy.DefaultPolicy \
+    -user_main org.apache.nemo.examples.beam.WordCount \
+    -user_args "$(pwd)/resources/test_input_wordcount $(pwd)/result/test_output_wordcount"

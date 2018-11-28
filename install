@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+JARSOURCE="https://snuspl.snu.ac.kr:50443/static/nemo-examples-beam-0.1-SNAPSHOT.jar"
+JAR="$(pwd)/repository/org/apache/nemo/nemo-examples-beam/0.1-SNAPSHOT/nemo-examples-beam-0.1-SNAPSHOT.jar"
+[[ ! -e "$JAR" ]] && curl "$JARSOURCE" -o "$JAR"
+
+exit 0
