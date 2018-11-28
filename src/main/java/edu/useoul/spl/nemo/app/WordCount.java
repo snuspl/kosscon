@@ -28,6 +28,8 @@ import org.apache.beam.sdk.values.KV;
 import org.apache.beam.sdk.values.PCollection;
 import org.apache.nemo.examples.beam.GenericSourceSink;
 
+import java.nio.file.Paths;
+
 /**
  * WordCount application.
  */
@@ -43,8 +45,9 @@ public final class WordCount {
    * @param args arguments.
    */
   public static void main(final String[] args) {
-    final String inputFilePath = args[0];
-    final String outputFilePath = args[1];
+    final String workingDir = System.getProperty("user.dir");
+    final String inputFilePath = Paths.get(workingDir, "resources", "test_input_wordcount").toString();
+    final String outputFilePath = Paths.get(workingDir, "results", "test_output_wordcount").toString();
     final PipelineOptions options = PipelineOptionsFactory.create().as(NemoPipelineOptions.class);
     options.setRunner(NemoPipelineRunner.class);
     options.setJobName("WordCount");
