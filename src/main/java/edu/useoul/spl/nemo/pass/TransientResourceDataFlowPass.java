@@ -29,8 +29,6 @@ import org.apache.nemo.compiler.optimizer.pass.compiletime.annotating.Annotating
 
 import java.util.List;
 
-import static org.apache.nemo.compiler.optimizer.pass.compiletime.annotating.TransientResourceDataStorePass.fromTransientToReserved;
-
 /**
  * Push from transient resources to reserved resources.
  */
