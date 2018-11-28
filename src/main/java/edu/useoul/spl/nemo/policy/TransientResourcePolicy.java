@@ -18,13 +18,13 @@
  */
 package edu.useoul.spl.nemo.policy;
 
+import edu.useoul.spl.nemo.pass.*;
 import org.apache.nemo.common.dag.DAG;
 import org.apache.nemo.common.eventhandler.PubSubEventHandlerWrapper;
 import org.apache.nemo.common.ir.edge.IREdge;
 import org.apache.nemo.common.ir.vertex.IRVertex;
 import org.apache.nemo.compiler.optimizer.pass.compiletime.composite.DefaultCompositePass;
 import org.apache.nemo.compiler.optimizer.pass.compiletime.composite.LoopOptimizationCompositePass;
-import org.apache.nemo.compiler.optimizer.pass.compiletime.composite.TransientResourceCompositePass;
 import org.apache.nemo.compiler.optimizer.policy.Policy;
 import org.apache.nemo.compiler.optimizer.policy.PolicyBuilder;
 import org.apache.reef.tang.Injector;
@@ -35,7 +35,9 @@ import org.apache.reef.tang.Injector;
 public final class TransientResourcePolicy implements Policy {
   public static final PolicyBuilder BUILDER =
       new PolicyBuilder()
-          .registerCompileTimePass(new TransientResourceCompositePass())
+          .registerCompileTimePass(new TransientResourcePriorityPass())
+          .registerCompileTimePass(new TransientResourceDataStorePass())
+          .registerCompileTimePass(new TransientResourceDataFlowPass())
           .registerCompileTimePass(new LoopOptimizationCompositePass())
           .registerCompileTimePass(new DefaultCompositePass());
   private final Policy policy;
