@@ -99,11 +99,7 @@ $ brew cask install sublime-text
 
 #### Ubuntu에 Sublime Text 설치하기
 
-```
-$ sudo add-apt-repository ppa:webupd8team/sublime-text-3
-$ sudo apt-get update
-$ sudo apt-get install sublime-text-installer
-```
+[설치 방법](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
 ## 에러 발생 시
 
