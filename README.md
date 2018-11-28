@@ -1,6 +1,10 @@
 # KOSSCON 2018 Tutorial: Beam Application을 Apache Nemo 를 활용하여 특정 환경에 최적화하여 실행하기
 
-### Ubuntu나 macOS가 없으신 분들을 위해! (Windows 사용자)
+* [Nemo Web UI](https://nemowebui.snuspl.snu.ac.kr:50443)
+
+## 실습 환경 갖추기
+
+### VirtualBox 이용 (Windows 사용자 등)
 
 [이 링크](https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe) 에서 VirtualBox를 다운받으실 수 있습니다. 설치하신 뒤에, 아래 링크에서 저희가 제공하는 vdi 파일를 통해서 아래 과정이 모두 완료되어있는 Ubuntu 머신을 생성할 수 있습니다.
 
@@ -8,9 +12,7 @@
 * [Download (gzip)](https://snuspl.snu.ac.kr:50443/static/KossconNemo.vdi.gz)
 * 압축을 푼 후의 MD5SUM: 64a0968efe6faf23d1e3aec5edb91645
 
-## 실습 환경 갖추기
-
-#### macOS
+### macOS
 
 1. Homebrew 설치 (`brew -version` 을 실행했을 때, `Homebrew ...` 으로 시작되는 문구가 출력되지 않는 경우):
 ```bash
@@ -29,7 +31,7 @@ brew install maven
 ```
 
 
-#### Ubuntu
+### Ubuntu
 
 Ubuntu 16.04 이상의 버전을 권장함.
 
@@ -89,13 +91,13 @@ mvn clean install
 
 하지만, 아직 코딩에 익숙하지 않으신 분들에 대해서는 sublime text가 가장 사용하기 쉽다고 개인적으로 생각하기 때문에 다음 과정을 통해 Sublime Text를 설치하실 수 있습니다. 후반부에 실제로 코딩하는 부분에 있어서는 필수적인 부분이기 때문에 텍스트 에디터가 익숙하지 않으신 분들은 꼭 따로 이 과정을 따라하시길 바랍니다.
 
-#### macOS에 Sublime Text 설치하기
+### macOS에 Sublime Text 설치하기
 
 ```bash
 brew cask install sublime-text
 ```
 
-#### Ubuntu에 Sublime Text 설치하기
+### Ubuntu에 Sublime Text 설치하기
 
 [설치 방법](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
