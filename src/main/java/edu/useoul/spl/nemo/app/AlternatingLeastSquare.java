@@ -38,6 +38,7 @@ import org.netlib.util.intW;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -355,23 +356,17 @@ public final class AlternatingLeastSquare {
   public static void main(final String[] args) {
     final Long start = System.currentTimeMillis();
     LOG.info(Arrays.toString(args));
-    final String inputFilePath = args[0];
-    final Integer numFeatures = Integer.parseInt(args[1]);
-    final Integer numItr = Integer.parseInt(args[2]);
-    final Double lambda;
+    final String workingDir = System.getProperty("user.dir");
+    final String inputFilePath = Paths.get(workingDir, "resources", "test_input_als").toString();
+    final int numFeatures = 10;
+    final int numItr = 3;
+    final double lambda;
     if (args.length > 3) {
       lambda = Double.parseDouble(args[3]);
     } else {
       lambda = 0.05;
     }
-    final String outputFilePath;
-    boolean checkOutput = false;
-    if (args.length > 4) {
-      outputFilePath = args[4];
-      checkOutput = true;
-    } else {
-      outputFilePath = "";
-    }
+    final String outputFilePath = Paths.get(workingDir, "results", "test_output_als").toString();
 
     final PipelineOptions options = PipelineOptionsFactory.create();
     options.setRunner(NemoPipelineRunner.class);
@@ -397,7 +392,7 @@ public final class AlternatingLeastSquare {
 
     // Create Initial Item Matrix
     PCollection<KV<Integer, float[]>> itemMatrix =
-        parsedItemData.apply(ParDo.of(new CreateInitialMatrix(numFeatures, checkOutput)));
+        parsedItemData.apply(ParDo.of(new CreateInitialMatrix(numFeatures, true)));
 
     // Iterations to update Item Matrix.
     for (int i = 0; i < numItr; i++) {
@@ -405,20 +400,18 @@ public final class AlternatingLeastSquare {
       itemMatrix = itemMatrix.apply(new UpdateUserAndItemMatrix(numFeatures, lambda, parsedUserData, parsedItemData));
     }
 
-    if (checkOutput) {
-      final PCollection<String> result = itemMatrix.apply(MapElements.<KV<Integer, float[]>, String>via(
-          new SimpleFunction<KV<Integer, float[]>, String>() {
-            @Override
-            public String apply(final KV<Integer, float[]> elem) {
-              final List<String> values = Stream.of(ArrayUtils.toObject(elem.getValue()))
-                  .map(String::valueOf)
-                  .collect(Collectors.toList());
-              return elem.getKey() + "," + String.join(",", values);
-            }
-          }));
+    final PCollection<String> result = itemMatrix.apply(MapElements.<KV<Integer, float[]>, String>via(
+        new SimpleFunction<KV<Integer, float[]>, String>() {
+          @Override
+          public String apply(final KV<Integer, float[]> elem) {
+            final List<String> values = Stream.of(ArrayUtils.toObject(elem.getValue()))
+                .map(String::valueOf)
+                .collect(Collectors.toList());
+            return elem.getKey() + "," + String.join(",", values);
+          }
+        }));
 
-      GenericSourceSink.write(result, outputFilePath);
-    }
+    GenericSourceSink.write(result, outputFilePath);
 
     p.run();
     LOG.info("JCT " + (System.currentTimeMillis() - start));
