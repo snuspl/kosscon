@@ -3,4 +3,5 @@
 REEF_LOCAL_RUNTIME/
 target/
 /result/
+/.idea/
 /repository/org/apache/nemo/nemo-examples-beam/0.1-SNAPSHOT/nemo-examples-beam-0.1-SNAPSHOT.jar
