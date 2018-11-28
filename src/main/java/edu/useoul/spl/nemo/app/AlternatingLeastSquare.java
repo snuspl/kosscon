@@ -32,6 +32,7 @@ import org.apache.beam.sdk.values.PCollection;
 import org.apache.beam.sdk.values.PCollectionView;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.nemo.examples.beam.FloatArrayCoder;
+import org.apache.nemo.examples.beam.GenericSourceSink;
 import org.apache.nemo.examples.beam.IntArrayCoder;
 import org.netlib.util.intW;
 import org.slf4j.Logger;
