@@ -61,7 +61,7 @@ $ sudo vi /etc/environments
 여기에서 `o`를 눌러서 새로운 줄에다가 다음 줄을 삽입한다
 
 ```
-JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64/bin/"
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 ```
 
 `:wq` 를 누르고 나와서 새로운 environment variable을 적용하고 확인한다.
