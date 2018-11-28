@@ -1,5 +1,11 @@
 # KOSSCON 2018 Tutorial: Beam Application을 Apache Nemo 를 활용하여 특정 환경에 최적화하여 실행하기
 
+### Ubuntu나 Mac OS가 없으신 분들을 위해! (Windows 사용자)
+
+[이 링크](https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe) 에서 VirtualBox를 다운받으실 수 있습니다. 설치하신 뒤에, 아래 링크에서 저희가 제공하는 virtualbox image를 통해서 아래 과정이 모두 이미 설치되어있는 ubuntu 이미지를 찾을 수 있습니다.
+
+TODO
+
 ## 실습 환경 갖추기
 
 #### Mac OS
