@@ -78,6 +78,7 @@ echo "$JAVA_HOME" # 알맞게 설정되었는지 확인
 
 ```bash
 git clone https://github.com/snuspl/kosscon
+cd kosscon
 ./install # 빌드된 Nemo JAR를 다운로드합니다
 mvn clean install
 ```
