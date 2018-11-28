@@ -1,4 +1,4 @@
-# KOSSCON 2018 Tutorial: Apache Nemo 위에서 주어진 Beam Application을 특정 환경에 대한 설정으로 실행하기
+# KOSSCON 2018 Tutorial: Beam Application을 Apache Nemo 를 활용하여 특정 환경에 최적화하여 실행하기
 
 ## 실습 환경 갖추기
 
