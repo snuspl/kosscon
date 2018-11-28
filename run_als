@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+exec ./run \
+    -job_id als_default \
+    -user_main edu.useoul.spl.nemo.app.AlternatingLeastSquare
