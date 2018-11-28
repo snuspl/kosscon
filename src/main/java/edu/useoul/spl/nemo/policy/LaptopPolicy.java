@@ -18,21 +18,25 @@
  */
 package edu.useoul.spl.nemo.policy;
 
-import edu.useoul.spl.nemo.pass.SmallScalePass;
+import edu.useoul.spl.nemo.pass.LaptopPass;
 import org.apache.nemo.common.dag.DAG;
 import org.apache.nemo.common.eventhandler.PubSubEventHandlerWrapper;
 import org.apache.nemo.common.ir.edge.IREdge;
 import org.apache.nemo.common.ir.vertex.IRVertex;
+import org.apache.nemo.compiler.optimizer.pass.compiletime.composite.DefaultCompositePass;
+import org.apache.nemo.compiler.optimizer.pass.compiletime.composite.LoopOptimizationCompositePass;
 import org.apache.nemo.compiler.optimizer.policy.Policy;
 import org.apache.nemo.compiler.optimizer.policy.PolicyBuilder;
 import org.apache.reef.tang.Injector;
 
-public class SmallScalePolicy implements Policy {
+public class LaptopPolicy implements Policy {
   public static final PolicyBuilder BUILDER =
       new PolicyBuilder()
-          .registerCompileTimePass(new SmallScalePass());
+          .registerCompileTimePass(new LaptopPass())
+          .registerCompileTimePass(new LoopOptimizationCompositePass())
+          .registerCompileTimePass(new DefaultCompositePass());
 
-  public SmallScalePolicy() {
+  public LaptopPolicy() {
     this.policy = BUILDER.build();
   }
   private final Policy policy;
