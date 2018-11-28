@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 exec ./run \
-    -job_id mr_default \
+    -job_id wordcount_default \
     -user_main edu.useoul.spl.nemo.app.WordCount

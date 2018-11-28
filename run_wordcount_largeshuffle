@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+exec ./run \
+    -job_id wordcount_largeshuffle \
+    -user_main edu.useoul.spl.nemo.app.WordCount \
+    -optimization_policy edu.useoul.spl.nemo.policy.LargeShufflePolicy
