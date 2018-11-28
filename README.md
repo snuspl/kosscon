@@ -79,3 +79,31 @@ $ cd 추후수정예정
 $ mvn clean install -T2C -DskipITs
 ```
 
+## 텍스트 에디터 설치하기
+
+기본적으로 vim을 사용하는데 문제가 없으신 분이나 emacs, sublime text등 기존에 편하게 사용하는 텍스트 에디터가 있으신 분은 이 과정을 따라하지 않으셔도 됩니다.
+
+하지만, 아직 코딩에 익숙하지 않으신 분들에 대해서는 sublime text가 가장 사용하기 쉽다고 개인적으로 생각하기 때문에 다음 과정을 통해 Sublime Text를 설치하실 수 있습니다. 후반부에 실제로 코딩하는 부분에 있어서는 필수적인 부분이기 때문에 텍스트 에디터가 익숙하지 않으신 분들은 꼭 따로 이 과정을 따라하시길 바랍니다.
+
+#### Mac OS에 Sublime Text 설치하기
+
+```
+$ brew cask install sublime-text
+```
+
+#### Ubuntu에 Sublime Text 설치하기
+
+```
+$ sudo add-apt-repository ppa:webupd8team/sublime-text-3
+$ sudo apt-get update
+$ sudo apt-get install sublime-text-installer
+```
+
+## 에러 발생 시
+
+만약에 설치를 하다가 에러가 발생한다면, 그 에러는 약 99%의 경우 다른 사람이 한 번쯤은 겪어보았던 문제입니다. (이 링크)[https://www.google.com]를 통해서 찾을 수 있는 (구글 사이트)[https://www.google.com]에 가셔서 에러 메시지 (보통 ERROR 으로 시작하는 줄입니다)를 복사&붙여넣기 하셔서 검색하면 보통 친절한 답변을 찾을 수 있습니다 (StackOverflow 라는 사이트에 있는 답변이 보통은 가장 좋습니다).
+
+또한, 실습 진행 중 발생하는 문제는 대략 85%의 경우 오타로 인한 문제입니다 (e.g., `stdio.h` 대신 `studio.h`로 잘못 입력). 보통 실행을 해서 에러 메시지가 출력되면, 해당하는 메시지에서 문제가 있는 해당 줄에 대한 정보를 찾으실 수 있습니다. 해당 줄을 자세히 살펴보시고 오타가 있는지 확인 해 주시길 바랍니다.
+
+이렇게 하셔도 해결이 되지 않는다면 손을 드셔서 질문을 해 주시길 바랍니다. 달려가서 해결해드리겠습니다. :)
+
