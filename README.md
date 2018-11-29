@@ -9,7 +9,7 @@
 [이 링크](https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe) 에서 VirtualBox를 다운받으실 수 있습니다. 설치하신 뒤에, 아래 링크에서 저희가 제공하는 vdi 파일를 통해서 아래 과정이 모두 완료되어있는 Ubuntu 머신을 생성할 수 있습니다.
 
 * [Download (zip)](https://snuspl.snu.ac.kr:50443/static/KossconNemo.zip)
-* 압축을 푼 후의 MD5SUM: 55542ecf86c91e60f8e06c20d43fe117
+  * MD5SUM: 68f8db1400ffb7cfbe7ae30de528f0b9
 
 ### macOS
 
