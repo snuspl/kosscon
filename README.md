@@ -1,6 +1,7 @@
 # KOSSCON 2018 Tutorial: Beam Application을 Apache Nemo 를 활용하여 특정 환경에 최적화하여 실행하기
 
 * [Nemo Web UI](https://nemowebui.snuspl.snu.ac.kr:50443)
+* [Slides](https://snuspl.snu.ac.kr:50443/static/KOSSCON2018-Slides.pdf)
 
 ## 실습 환경 갖추기
 
